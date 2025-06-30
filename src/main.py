@@ -1,12 +1,12 @@
-from modules.extraction import Extracter
+from modules.extraction import Extractor
 from modules.transformation import Transformer
 from modules.loading import Loader
 from modules.superset import SupersetImporter
 
 def main():
     try:
-        extracter = Extracter()
-        transformer = Transformer(extracter)
+        extractor = Extractor()
+        transformer = Transformer(extractor)
         Loader(transformer)
         print("ETL process completed successfully!", flush=True)
         

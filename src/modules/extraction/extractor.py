@@ -2,7 +2,7 @@ import os
 from typing import Literal
 from .adapter import APIClient
 
-class Extracter:
+class Extractor:
     def __init__(self):
         self.adapter = APIClient("https://www.pwc.com/us/en/careers/university_relations/data_analytics_cases_studies/")
         self.available_data = {

@@ -2,13 +2,13 @@ import os
 import pandas as pd
 from io import BytesIO
 from zipfile import ZipFile
-from ..extraction import Extracter
+from ..extraction import Extractor
 
 class Transformer:
-    def __init__(self, extracter: Extracter):
-        self.extracter = extracter
-        self.df_purchases = self.process_purchases(extracter.purchases)
-        self.df_sales = self.process_sales(extracter.sales, self.df_purchases["inventory_id"])
+    def __init__(self, Extractor: Extractor):
+        self.Extractor = Extractor
+        self.df_purchases = self.process_purchases(Extractor.purchases)
+        self.df_sales = self.process_sales(Extractor.sales, self.df_purchases["inventory_id"])
 
     def get_first_csv_from_zip(self, file_path: str) -> BytesIO:
         """Extract first CSV from ZIP file"""
